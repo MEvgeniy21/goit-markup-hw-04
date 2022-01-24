@@ -5,6 +5,8 @@
   --primary-color: #ffffff;
   --contact-text-color: rgba(255, 255, 255, 0.6);
   --footer-bg-color: #2f303a;
+  --hero-bg-color: #c4c4c4;
+  --hero-overlay-color: rgba(47, 48, 58, 0.4);
   --secondary-bg-color: #f5f4fa;
   --button-hover-color: #188ce8;
 }
@@ -87,6 +89,30 @@ ul {
   height: auto;
 }
 
+/* Общие свойства списка соц.сетей */
+.social-list {
+  display: flex;
+  margin-left: -10px;
+}
+
+.social-list .item {
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.social-list .link {
+  display: block;
+  width: 44px;
+  height: 44px;
+  padding: 11px;
+}
+
+.icon-social {
+  display: block;
+  width: 20px;
+  height: 20px;
+  --color3: currentColor;
+}
 /* -------header CSS */
 .header {
   border-bottom: 1px solid #ececec;
@@ -135,6 +161,16 @@ ul {
   margin-left: auto;
 }
 
+.header .header-contact .link {
+  display: flex;
+  align-items: center;
+}
+
+.header-icon {
+  margin-right: 10px;
+  --color4: currentColor;
+}
+
 .header-contact .link {
   color: var(--general-text-color);
 }
@@ -147,6 +183,7 @@ ul {
 .header-contact .link:focus {
   color: var(--activated-color);
 }
+
 /* -------footer CSS */
 .footer {
   padding-top: 60px;
@@ -183,6 +220,40 @@ ul {
 .footer-contact .contact-address:focus {
   color: var(--activated-color);
 }
+
+.footer-container {
+  display: flex;
+}
+
+.footer-social {
+  padding-top: 12px;
+  margin-left: 70px;
+  color: var(--primary-color);
+}
+
+.footer-social .text {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.footer-social .link {
+  color: inherit;
+}
+
+.social-list .item {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-list .link:hover,
+.social-list .link:focus {
+  background-color: var(--activated-color);
+  border-radius: 50%;
+}
+
 /* Общий CSS - конец */
 /* ----------------------- */
 /* index.html CSS - начало */
@@ -206,7 +277,12 @@ ul {
   padding-bottom: 200px;
 
   text-align: center;
-  background-color: var(--footer-bg-color);
+  background-color: var(--hero-bg-color);
+  background-image: linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)),
+    url(../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
