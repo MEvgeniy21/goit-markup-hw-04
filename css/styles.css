@@ -9,6 +9,7 @@
   --hero-overlay-color: rgba(47, 48, 58, 0.4);
   --secondary-bg-color: #f5f4fa;
   --button-hover-color: #188ce8;
+  --icon-color: #afb1b8;
 }
 /* Общий CSS - начало */
 body {
@@ -93,26 +94,33 @@ ul {
 .social-list {
   display: flex;
   margin-left: -10px;
+  justify-content: center;
 }
 
 .social-list .item {
   margin-left: 10px;
-  border-radius: 50%;
-}
-
-.social-list .link {
-  display: block;
-  width: 44px;
-  height: 44px;
-  padding: 11px;
 }
 
 .icon-social {
-  display: block;
-  width: 20px;
-  height: 20px;
   --color3: currentColor;
 }
+
+.social-list .link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.social-list .link:hover,
+.social-list .link:focus {
+  color: var(--primary-color);
+  background-color: var(--activated-color);
+  border-radius: 50%;
+}
+
 /* -------header CSS */
 .header {
   border-bottom: 1px solid #ececec;
@@ -242,16 +250,7 @@ ul {
 
 .footer-social .link {
   color: inherit;
-}
-
-.social-list .item {
   background-color: rgba(255, 255, 255, 0.1);
-}
-
-.social-list .link:hover,
-.social-list .link:focus {
-  background-color: var(--activated-color);
-  border-radius: 50%;
 }
 
 /* Общий CSS - конец */
@@ -265,7 +264,8 @@ ul {
 
 .advantage-title,
 .gallery-title,
-.team-title {
+.team-title,
+.client-title {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
@@ -273,16 +273,20 @@ ul {
 
 /* секция герой */
 .hero {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 200px;
   padding-bottom: 200px;
 
-  text-align: center;
   background-color: var(--hero-bg-color);
   background-image: linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)),
     url(../images/hero.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  text-align: center;
 }
 
 .hero-title {
@@ -339,6 +343,15 @@ ul {
   text-transform: uppercase;
 }
 
+.advantage-list .icon-bg {
+  display: flex;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  justify-content: center;
+  background-color: var(--secondary-bg-color);
+  border-radius: 4px;
+}
 /* секция галлерея */
 .gallery {
   padding-top: 0;
@@ -370,6 +383,7 @@ ul {
 
 .team-list {
   display: flex;
+  margin-left: -30px;
 }
 
 .team-list .title {
@@ -378,20 +392,64 @@ ul {
   font-weight: 500;
 }
 
-.team-list .item {
+.team-list > .item {
+  margin-left: 30px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   background-color: var(--primary-color);
 }
 
-.team-list .item + .item {
-  margin-left: 30px;
-}
-
 .team-list .content {
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.team-list .text {
+  margin-bottom: 16px;
+}
+
+.team-list .link {
+  color: var(--icon-color);
+}
+
+/* Секция клиентов */
+.client-title {
+  margin-bottom: 50px;
+}
+
+.client-list {
+  display: flex;
+  margin-left: -30px;
+  justify-content: center;
+}
+
+.client-list .item {
+  flex-basis: calc(100% / 6 - 30px);
+  margin-left: 30px;
+}
+
+.client-list .icon-client {
+  --color3: currentColor;
+}
+
+.client-list .link {
+  display: flex;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  justify-content: center;
+  color: var(--icon-color);
+  outline: 1px solid var(--icon-color);
+  border-radius: 4px;
+}
+
+.client-list .link:hover,
+.client-list .link:focus {
+  color: var(--activated-color);
+  outline: 1px solid var(--activated-color);
+  border-radius: 4px;
 }
 
 /* index.html CSS - конец */
