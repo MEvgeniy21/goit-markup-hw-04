@@ -93,11 +93,10 @@ ul {
 /* Общие свойства списка соц.сетей */
 .social-list {
   display: flex;
-  margin-left: -10px;
   justify-content: center;
 }
 
-.social-list .item {
+.social-list .item + .item {
   margin-left: 10px;
 }
 
@@ -111,13 +110,6 @@ ul {
   height: 44px;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-}
-
-.social-list .link:hover,
-.social-list .link:focus {
-  color: var(--primary-color);
-  background-color: var(--activated-color);
   border-radius: 50%;
 }
 
@@ -253,6 +245,12 @@ ul {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.footer-social .link:hover,
+.footer-social .link:focus {
+  background-color: var(--activated-color);
+  border-radius: 50%;
+}
+
 /* Общий CSS - конец */
 /* ----------------------- */
 /* index.html CSS - начало */
@@ -345,9 +343,9 @@ ul {
 
 .advantage-list .icon-bg {
   display: flex;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  height: 120px;
   margin-bottom: 30px;
+  align-items: center;
   justify-content: center;
   background-color: var(--secondary-bg-color);
   border-radius: 4px;
@@ -415,6 +413,12 @@ ul {
   color: var(--icon-color);
 }
 
+.team .social-list .link:hover,
+.team .social-list .link:focus {
+  color: var(--primary-color);
+  background-color: var(--activated-color);
+  border-radius: 50%;
+}
 /* Секция клиентов */
 .client-title {
   margin-bottom: 50px;
@@ -437,8 +441,8 @@ ul {
 
 .client-list .link {
   display: flex;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  height: 92px;
+  align-items: center;
   justify-content: center;
   color: var(--icon-color);
   outline: 1px solid var(--icon-color);
