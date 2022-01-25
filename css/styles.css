@@ -231,10 +231,10 @@ ul {
 
 .footer-container {
   display: flex;
+  align-items: baseline;
 }
 
 .footer-social {
-  padding-top: 12px;
   margin-left: 70px;
   color: var(--primary-color);
 }
